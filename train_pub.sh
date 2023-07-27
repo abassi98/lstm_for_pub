@@ -11,6 +11,15 @@
 #SBATCH --mail-type=END,FAIL     
 #SBATCH --output=pub_lstm.out
 #SBATCH --error=pub_lstm.err
+
+module load gcc/9.4.0-pe5.34 miniconda3/4.12.0 lsfm-init-miniconda/1.0.0	# comment to run on your machine
+
+
+# the above code is meant to run on ZAHW cluster in Zurich. Modify it to use in your machine/cluster. 
+# from here onwards you can run everywhere
+
+conda activate hydro # comment to run on your machine
+
 nsplits=12
 nseeds=10
 firstseed=300
