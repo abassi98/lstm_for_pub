@@ -1,0 +1,9 @@
+ruined runs: to redo
+seed $ split $
+300  $ 3     $
+301  $ 4     $
+308  $ 4     $
+309  $ all   $
+
+To check second training manche. Soudl finish on 9th August
+
