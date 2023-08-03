@@ -31,7 +31,7 @@ for (( seed = $firstseed ; seed < $((nseeds+$firstseed)) ; seed++ )); do
   python3 main.py --n_splits=$nsplits --seed=$seed create_splits 
   wait
 
-  for ((split = 0 ; split < 6; split++ )); do  
+  for ((split = 6 ; nsplits < 6; split++ )); do  
     
     echo $seed $gpu
 
