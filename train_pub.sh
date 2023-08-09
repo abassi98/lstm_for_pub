@@ -3,7 +3,7 @@
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=1
 #SBATCH --cpus-per-task=3
-#SBATCH --time=24:00:00
+#SBATCH --time=96:00:00
 #SBATCH --partition=earth-4
 #SBATCH --constraint=rhel8
 #SBATCH --gres=gpu:a100:1
@@ -31,7 +31,7 @@ for (( seed = $firstseed ; seed < $((nseeds+$firstseed)) ; seed++ )); do
   python3 main.py --n_splits=$nsplits --seed=$seed create_splits 
   wait
 
-  for ((split = 0 ; split < 6; split++ )); do  
+  for ((split = 6 ; split < nsplits; split++ )); do  
     
     echo $seed $gpu
 
