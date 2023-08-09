@@ -31,13 +31,12 @@ for (( seed = $firstseed ; seed < $((nseeds+$firstseed)) ; seed++ )); do
   #python3 main.py --n_splits=$nsplits --seed=$seed create_splits 
   #wait
 
-  for ((split = 6 ; split < nsplits; split++ )); do  
+  for ((split = 0 ; split < nsplits; split++ )); do  
     
     echo $seed $gpu
 
     if [ "$1" = "lstm" ]
     then
-
       outfile="reports/pub_lstm_nostat_extended_nldas.$seed.$split.out"
       python3 main.py --gpu=$gpu --num_workers=3 --no_static=True --split=$split --split_file="data/kfold_splits_seed$seed.p" train > $outfile &
 
