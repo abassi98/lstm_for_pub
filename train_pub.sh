@@ -3,7 +3,7 @@
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=1
 #SBATCH --cpus-per-task=3
-#SBATCH --time=96:00:00
+#SBATCH --time=5:00:00
 #SBATCH --partition=earth-4
 #SBATCH --constraint=rhel8
 #SBATCH --gres=gpu:a100:1
@@ -20,9 +20,9 @@ module load gcc/9.4.0-pe5.34 miniconda3/4.12.0 lsfm-init-miniconda/1.0.0	# comme
 
 conda activate hydro # comment to run on your machine
 
-nsplits=12
+nsplits=1
 nseeds=1
-firstseed=309
+firstseed=300
 gpu=0
 
 
@@ -31,7 +31,7 @@ for (( seed = $firstseed ; seed < $((nseeds+$firstseed)) ; seed++ )); do
   #python3 main.py --n_splits=$nsplits --seed=$seed create_splits 
   #wait
 
-  for ((split = 0 ; split < nsplits; split++ )); do  
+  for ((split = 3 ; split < 4; split++ )); do  
     
     echo $seed $gpu
 
