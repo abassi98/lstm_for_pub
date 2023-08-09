@@ -21,8 +21,8 @@ module load gcc/9.4.0-pe5.34 miniconda3/4.12.0 lsfm-init-miniconda/1.0.0	# comme
 conda activate hydro # comment to run on your machine
 
 nsplits=12
-nseeds=10
-firstseed=300
+nseeds=1
+firstseed=309
 gpu=0
 
 
@@ -39,7 +39,7 @@ for (( seed = $firstseed ; seed < $((nseeds+$firstseed)) ; seed++ )); do
     then
 
       outfile="reports/pub_lstm_nostat_extended_nldas.$seed.$split.out"
-      python3 main.py --gpu=$gpu --no_static=True --split=$split --split_file="data/kfold_splits_seed$seed.p" train > $outfile &
+      python3 main.py --gpu=$gpu --num_workers=3 --no_static=True --split=$split --split_file="data/kfold_splits_seed$seed.p" train > $outfile &
 
     else
       echo bad model choice
