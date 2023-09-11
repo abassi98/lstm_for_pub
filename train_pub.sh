@@ -28,12 +28,12 @@ gpu=0
 
 for (( seed = $firstseed ; seed < $((nseeds+$firstseed)) ; seed++ )); do
 
-  #python3 main.py --n_splits=$nsplits --seed=$seed create_splits 
-  #wait
+  python3 main.py --n_splits=$nsplits --seed=$seed create_splits 
+  wait
 
   for ((split = 3 ; split < 4; split++ )); do  
     
-    echo $seed $gpu
+    #echo $seed $gpu
 
     if [ "$1" = "lstm" ]
     then
