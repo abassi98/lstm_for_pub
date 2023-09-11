@@ -37,6 +37,7 @@ for (( seed = $firstseed ; seed < $((nseeds+$firstseed)) ; seed++ )); do
 
     if [ "$1" = "lstm" ]
     then
+    
       outfile="reports/pub_lstm_nostat_extended_nldas.$seed.$split.out"
       python main.py --gpu=$gpu --num_workers=3 --no_static=True --split=$split --split_file="data/kfold_splits_seed$seed.p" train > $outfile &
 
