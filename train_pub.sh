@@ -22,7 +22,7 @@ conda activate hydro # comment to run on your machine
 
 nsplits=1
 nseeds=1
-firstseed=300
+firstseed=301
 gpu=0
 
 
@@ -31,7 +31,7 @@ for (( seed = $firstseed ; seed < $((nseeds+$firstseed)) ; seed++ )); do
   python3 main.py --n_splits=$nsplits --seed=$seed create_splits 
   wait
 
-  for ((split = 3 ; split < 4; split++ )); do  
+  for ((split = 4 ; split < 5; split++ )); do  
     
     #echo $seed $gpu
 
