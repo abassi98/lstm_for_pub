@@ -22,7 +22,7 @@ conda activate hydro # comment to run on your machine
 
 nsplits=1
 nseeds=1
-firstseed=301
+firstseed=308
 gpu=0
 
 
