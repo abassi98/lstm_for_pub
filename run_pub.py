@@ -48,7 +48,7 @@ for seed in range(firstSeed, firstSeed + nSeeds):  # loop through randomized ens
         current_dir = os.getcwd() # get current directory
         rel_run_path = os.path.relpath(run_dir, current_dir) # get relative path of run directory
         print(rel_run_path)
-        results_file = glob.glob(f"{rel_run_path}/*lstm*seed{file_seed}.p")[0]
+        results_file = glob.glob(f"/{rel_run_path}/*lstm*seed{file_seed}.p")[0]
         with open(results_file, 'rb') as f:
             partial_dict = pickle.load(f)
 
