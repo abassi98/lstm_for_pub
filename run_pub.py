@@ -39,17 +39,14 @@ for seed in range(firstSeed, firstSeed + nSeeds):  # loop through randomized ens
         split_file = lines[13].split(': ')[1][:-1]
         split_num = lines[12].split(' ')[1][:-1]
         run_dir = lines[28].split('attributes in ')[1].split('attributes')[0]
-
-        run_command = f"python3 main.py --gpu={gpu} --run_dir={run_dir} --split={split_num} --split_file={split_file} evaluate"
+        current_dir = os.getcwd() # get current directory
+        rel_run_dir = os.path.relpath(run_dir, current_dir) # get relative path of run directory
+        run_command = f"python main.py --gpu={gpu} --run_dir={run_dir} --split={split_num} --split_file={split_file} evaluate"
         #    os.system(run_command)
 
         # grab the test output file for this split
         file_seed = run_dir.split('seed')[1][:-1]
-        current_dir = os.getcwd() # get current directory
-        rel_run_path = os.path.relpath(run_dir, current_dir) # get relative path of run directory
-        print(rel_run_path)
-        print(file_seed)
-        results_file = glob.glob(f"/{rel_run_path}/*lstm*seed{file_seed}.p")[0]
+        results_file = glob.glob(f"/{rel_run_dir}/*lstm*seed{file_seed}.p")[0]
         with open(results_file, 'rb') as f:
             partial_dict = pickle.load(f)
 
