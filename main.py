@@ -497,7 +497,7 @@ def evaluate(user_cfg: Dict):
             dates=[GLOBAL_SETTINGS["val_start"], GLOBAL_SETTINGS["val_end"]],
             is_train=False,
             seq_length=run_cfg["seq_length"],
-            with_attributes=True,
+            with_attributes=False,
             attribute_means=means,
             attribute_stds=stds,
             concat_static=run_cfg["concat_static"],
