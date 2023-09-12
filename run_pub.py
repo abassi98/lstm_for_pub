@@ -41,7 +41,7 @@ for seed in range(firstSeed, firstSeed + nSeeds):  # loop through randomized ens
         run_dir = lines[28].split('attributes in ')[1].split('attributes')[0]
         current_dir = os.getcwd() # get current directory
         rel_run_dir = os.path.relpath(run_dir, current_dir) # get relative path of run directory
-        run_command = f"python main.py --gpu={gpu} --run_dir={run_dir} --split={split_num} --split_file={split_file} evaluate"
+        run_command = f"python main.py --gpu={gpu} --no_static=True --run_dir={run_dir} --split={split_num} --split_file={split_file} evaluate"
         os.system(run_command)
 
         # grab the test output file for this split
