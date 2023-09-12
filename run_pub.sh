@@ -2,11 +2,9 @@
 #SBATCH --job-name=pub_lstm
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=1
-#SBATCH --cpus-per-task=3
+#SBATCH --cpus-per-task=6
 #SBATCH --time=5:00:00
-#SBATCH --partition=earth-4
-#SBATCH --constraint=rhel8
-#SBATCH --gres=gpu:a100:1
+#SBATCH --partition=earth-1
 #SBATCH --mail-type=BEGIN
 #SBATCH --mail-type=END,FAIL     
 #SBATCH --output=pub_lstm.out
