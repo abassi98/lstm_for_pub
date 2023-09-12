@@ -19,7 +19,7 @@ import pandas as pd
 # number of ensemble members
 nSplits = 12
 nSeeds = 10
-firstSeed = 200
+firstSeed = 300
 
 # user inputs
 experiment = sys.argv[1]
