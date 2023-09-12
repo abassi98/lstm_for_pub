@@ -42,7 +42,7 @@ for seed in range(firstSeed, firstSeed + nSeeds):  # loop through randomized ens
         current_dir = os.getcwd() # get current directory
         rel_run_dir = os.path.relpath(run_dir, current_dir) # get relative path of run directory
         run_command = f"python main.py --gpu={gpu} --run_dir={run_dir} --split={split_num} --split_file={split_file} evaluate"
-        #    os.system(run_command)
+        os.system(run_command)
 
         # grab the test output file for this split
         file_seed = run_dir.split('seed')[1][:-1]
