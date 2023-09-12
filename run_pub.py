@@ -46,7 +46,7 @@ for seed in range(firstSeed, firstSeed + nSeeds):  # loop through randomized ens
 
         # grab the test output file for this split
         file_seed = run_dir.split('seed')[1][:-1]
-        results_file = glob.glob(f"/{rel_run_dir}/*lstm*seed{file_seed}.p")[0]
+        results_file = glob.glob(f"{rel_run_dir}/*lstm*seed{file_seed}.p")[0]
         with open(results_file, 'rb') as f:
             partial_dict = pickle.load(f)
 
