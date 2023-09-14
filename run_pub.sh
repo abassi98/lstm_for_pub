@@ -3,7 +3,7 @@
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=1
 #SBATCH --cpus-per-task=6
-#SBATCH --time=5:00:00
+#SBATCH --time=12:00:00
 #SBATCH --partition=earth-1
 #SBATCH --mail-type=BEGIN
 #SBATCH --mail-type=END,FAIL     
