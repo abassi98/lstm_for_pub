@@ -20,9 +20,9 @@ module load gcc/9.4.0-pe5.34 miniconda3/4.12.0 lsfm-init-miniconda/1.0.0	# comme
 
 conda activate hydro # comment to run on your machine
 
-nsplits=12
+nsplits=1
 nseeds=1
-firstseed=309
+firstseed=304
 gpu=0
 
 
@@ -31,7 +31,7 @@ for (( seed = $firstseed ; seed < $((nseeds+$firstseed)) ; seed++ )); do
   python3 main.py --n_splits=$nsplits --seed=$seed create_splits 
   wait
 
-  for ((split = 6 ; split < nsplits; split++ )); do  
+  for ((split = 9 ; split < 10; split++ )); do  
     
     #echo $seed $gpu
 
