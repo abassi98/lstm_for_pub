@@ -135,8 +135,8 @@ for basin in ens_dict:
                                    'sim95', 'obs0', 'sim0', 'obsL', 'simL', 'obsH', 'simH',
                                    'obsFDC', 'simFDC'
                                ])
-    fname = f"analysis/stats/basin_specific/{experiment}_{basin}.csv"
-    basin_stats.to_csv(fname)
+    #fname = f"analysis/stats/basin_specific/{experiment}_{basin}.csv"
+    #basin_stats.to_csv(fname)
 
     # print basin-specific stats
     bdex = bdex + 1
