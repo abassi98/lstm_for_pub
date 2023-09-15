@@ -23,7 +23,7 @@ from performance_functions import (baseflow_index, bias, flow_duration_curve,
 experiment = sys.argv[1]
 
 # load ensemble file
-fname = f"results_data/{experiment}.pkl"
+fname = f"analysis/results_data/{experiment}.pkl"
 with open(fname, 'rb') as f:
     ens_dict = pickle.load(f)
 
@@ -135,7 +135,7 @@ for basin in ens_dict:
                                    'sim95', 'obs0', 'sim0', 'obsL', 'simL', 'obsH', 'simH',
                                    'obsFDC', 'simFDC'
                                ])
-    fname = f"stats/basin_specific/{experiment}_{basin}.csv"
+    fname = f"analysis/stats/basin_specific/{experiment}_{basin}.csv"
     basin_stats.to_csv(fname)
 
     # print basin-specific stats
@@ -148,7 +148,7 @@ stats = pd.DataFrame(stats,
                          'basin', 'nse', 'bias', 'stdev', 'obs5', 'sim5', 'obs95', 'sim95', 'obs0',
                          'sim0', 'obsL', 'simL', 'obsH', 'simH', 'obsFDC', 'simFDC'
                      ])
-fname = f"stats/{experiment}.csv"
+fname = f"analysis/stats/{experiment}.csv"
 stats.to_csv(fname)
 
 # print to screen
